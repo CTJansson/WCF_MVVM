@@ -1,0 +1,10 @@
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\UserNewsAppService.dll.config
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\UserNewsAppService.dll
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\UserNewsAppService.pdb
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\EntityFramework.dll
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\EntityFramework.SqlServer.dll
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\EntityFramework.xml
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\bin\EntityFramework.SqlServer.xml
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\obj\Debug\UserNewsAppService.csprojResolveAssemblyReference.cache
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\obj\Debug\UserNewsAppService.dll
+D:\Knakkern\WCF_Tenta\UserNewsAppService\UserNewsAppService\obj\Debug\UserNewsAppService.pdb

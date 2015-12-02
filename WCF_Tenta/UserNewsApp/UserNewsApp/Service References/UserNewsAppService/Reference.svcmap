@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="38001510-5b69-43ed-a958-a9055408df4b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50996/UserNewsAppService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserNewsAppService.wsdl" MetadataType="Wsdl" ID="d23b0856-7a15-4743-bd69-635856795096" SourceId="1" SourceUrl="http://localhost:50996/UserNewsAppService.svc?wsdl" />
+    <MetadataFile FileName="UserNewsAppService.xsd" MetadataType="Schema" ID="e7b85041-8163-412f-b0fe-7ceb3c875bdd" SourceId="1" SourceUrl="http://localhost:50996/UserNewsAppService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserNewsAppService1.xsd" MetadataType="Schema" ID="3afab6e6-2d00-4b58-b806-68f923aa33ba" SourceId="1" SourceUrl="http://localhost:50996/UserNewsAppService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserNewsAppService.disco" MetadataType="Disco" ID="dbbe3e26-60f2-4c1d-994e-b9127d125984" SourceId="1" SourceUrl="http://localhost:50996/UserNewsAppService.svc?disco" />
+    <MetadataFile FileName="UserNewsAppService2.xsd" MetadataType="Schema" ID="3ec888a7-f89d-4f5e-9433-45e9681b0717" SourceId="1" SourceUrl="http://localhost:50996/UserNewsAppService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

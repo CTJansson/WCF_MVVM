@@ -1,0 +1,10 @@
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\TentaEmail.dll.config
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\TentaEmail.dll
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\TentaEmail.pdb
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\EntityFramework.dll
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\EntityFramework.SqlServer.dll
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\EntityFramework.xml
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\bin\EntityFramework.SqlServer.xml
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\obj\Debug\TentaEmail.csprojResolveAssemblyReference.cache
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\obj\Debug\TentaEmail.dll
+D:\Knakkern\WCF_Tenta\TentaEmail\TentaEmail\obj\Debug\TentaEmail.pdb

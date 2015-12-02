@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_Admin.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_Admin.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AdminAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="tns:AdminAuthor" />
+      <xs:element minOccurs="0" name="AuthorId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdminAccount" nillable="true" type="tns:AdminAccount" />
+  <xs:complexType name="AdminAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdminAuthor" nillable="true" type="tns:AdminAuthor" />
+  <xs:complexType name="ArrayOfAdminNewsPosts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdminNewsPosts" nillable="true" type="tns:AdminNewsPosts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdminNewsPosts" nillable="true" type="tns:ArrayOfAdminNewsPosts" />
+  <xs:complexType name="AdminNewsPosts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="tns:AdminAuthor" />
+      <xs:element minOccurs="0" name="AuthorId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Header" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Tags" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WrittenBy" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdminNewsPosts" nillable="true" type="tns:AdminNewsPosts" />
+  <xs:complexType name="ArrayOfNewsCategories">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewsCategories" nillable="true" type="tns:NewsCategories" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewsCategories" nillable="true" type="tns:ArrayOfNewsCategories" />
+  <xs:complexType name="NewsCategories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewsCategories" nillable="true" type="tns:NewsCategories" />
+</xs:schema>

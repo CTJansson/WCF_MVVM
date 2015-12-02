@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.FK__Accounts__Author__1273C1CD" FromRole="Accounts" ToRole="Authors" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK__Accounts__Author__1273C1CD" FromRole="Authors" ToRole="Accounts" />
+    <NavigationProperty Name="NewsPosts" Relationship="Self.FK__NewsPosts__Autho__1BFD2C07" FromRole="Authors" ToRole="NewsPosts" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="NewsPosts" Relationship="Self.FK__NewsPosts__Categ__1B0907CE" FromRole="Categories" ToRole="NewsPosts" />
+  </EntityType>
+  <EntityType Name="NewsPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <Property Name="Tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Author" Relationship="Self.FK__NewsPosts__Autho__1BFD2C07" FromRole="NewsPosts" ToRole="Authors" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__NewsPosts__Categ__1B0907CE" FromRole="NewsPosts" ToRole="Categories" />
+    <Property Name="WrittenBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SubscribedEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubscribedPhone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Accounts__Author__1273C1CD">
+    <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+    <End Role="Accounts" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Accounts">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NewsPosts__Autho__1BFD2C07">
+    <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+    <End Role="NewsPosts" Type="Self.NewsPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsPosts">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NewsPosts__Categ__1B0907CE">
+    <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+    <End Role="NewsPosts" Type="Self.NewsPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsPosts">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NewsAppEnt" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="NewsPosts" EntityType="Self.NewsPost" />
+    <EntitySet Name="SubscribedEmails" EntityType="Self.SubscribedEmail" />
+    <EntitySet Name="SubscribedPhones" EntityType="Self.SubscribedPhone" />
+    <AssociationSet Name="FK__Accounts__Author__1273C1CD" Association="Self.FK__Accounts__Author__1273C1CD">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="Accounts" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NewsPosts__Autho__1BFD2C07" Association="Self.FK__NewsPosts__Autho__1BFD2C07">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="NewsPosts" EntitySet="NewsPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NewsPosts__Categ__1B0907CE" Association="Self.FK__NewsPosts__Categ__1B0907CE">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="NewsPosts" EntitySet="NewsPosts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
